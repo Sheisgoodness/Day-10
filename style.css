@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #333;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 60px; 
+    padding-bottom: 150px; 
+}
+
+.container .card {
+    background: #000;
+    color: #f4f4f4;
+    width: calc(30% - 20px);
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    position: relative; 
+    transition: transform 0.3s;
+}
+
+.container .card .recommended {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    width: 120px;
+    background: #ff6348;
+    color: #fff;
+    padding: 5px 0;
+    text-align: center;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.container .card:nth-child(2n+1) .top {
+    background: linear-gradient(135deg, #ff7f50, #ff6348);
+}
+
+.container .card:nth-child(2n+2) .top {
+    background: linear-gradient(135deg, #20b2aa, #00ced1);
+}
+
+.container .card:nth-child(3n+3) .top {
+    background: linear-gradient(135deg, #ff1493, #ff69b4);
+}
+
+.container .card .top {
+    height: 150px;
+    color: #fff;
+    padding: 20px 0;
+    border-radius: 20px 20px 0 0;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+}
+
+.container .card .top .title {
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.container .card .top .price-sec {
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+.container .card .top .price {
+    font-size: 42px;
+}
+
+.container .card .info {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.container .card .details .one {
+    margin-top: 25px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container .card .details .one::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    background: #ddd;
+    height: 1px;
+    left: 0;
+    top: -12px;
+    border-radius: 25px;
+}
+
+.container .card .details .one i {
+    color: #2db94d;
+}
+
+.container .card .details i.fa-times {
+    color: #cd3241;
+}
+
+.container .card button {
+    outline: none;
+    border: none;
+    height: 42px;
+    color: #fff;
+    margin: 30px auto 0; 
+    border-radius: 1px;
+    font-size: 15px;
+    width: 65%; 
+    display: block;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.container .card button:hover {
+    filter: brightness(90%);
+}
+
+.container .card.one button,
+.container .card.three button {
+    background-color: transparent; 
+    border: 2px solid; 
+    color: #fff; 
+}
+
+.container .card.one button {
+    border-image: linear-gradient(135deg, #ff7f50, #ff6348);
+    border-image-slice: 1; 
+}
+
+.container .card.three button {
+    border-image: linear-gradient(135deg, #ff1493, #ff69b4);
+    border-image-slice: 1; 
+}
+
+.container .card.one button:hover,
+.container .card.three button:hover {
+    background-color: rgba(255, 255, 255, 0.2); 
+}
+
+.container .card:nth-child(2n+2) button {
+    background: linear-gradient(135deg, #20b2aa, #00ced1);
+}
+
+.container .card button:hover {
+    filter: brightness(90%);
+}
+
+.container .card .features {
+    height: 150px;
+    color: #fff;
+    padding: 20px 0;
+    background-color: #111;
+    border-radius: 0 0 20px 20px;
+    clip-path: polygon(0 20%, 100% 0, 100% 70%, 0% 100%);
+}
+
+
+.container .card .features p {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.container .card .features p:first-child {
+    font-weight: bold;
+}
+
+/*===== Media queries =====*/
+@media (max-width: 1200px) {
+    .container .card {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 800px) {
+    .container .card {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .container .card {
+        width: calc(50% - 20px);
+    }
+}
